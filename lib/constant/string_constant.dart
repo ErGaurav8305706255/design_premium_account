@@ -16,5 +16,16 @@ static String hobbies = "Hobbies";
 static String search_setting = "Search Setting";
 static String privacy_policy = "Privacy Policy";
 static String log_out = "LOG OUT";
+static String gender = "Gender";
+static String male = "Male";
+static String female = "Female";
+static String both = "Both";
+static String distance = "Distance";
+static String age = "Age";
+static String apply = "Apply";
+static String name = "Name";
+static String dob = "Date of birth";
+static String add_new_hobbies = "+ ADD NEW HOBBY";
+static String you_have_1_hobby = "You Have 1 Hobby";
 
 }

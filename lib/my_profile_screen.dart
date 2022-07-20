@@ -4,9 +4,10 @@ import 'package:design_premium_account/constant/string_constant.dart';
 import 'package:design_premium_account/gallery_screen.dart';
 import 'package:design_premium_account/search_setting_screen.dart';
 import 'package:flutter/material.dart';
-
 import 'constant/color_constant.dart';
 import 'constant/string_constant.dart';
+import 'hobbies_screen.dart';
+import 'infirmation_screen.dart';
 class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({Key? key}) : super(key: key);
 
@@ -57,7 +58,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Row(
                           children: [
                             InkWell(onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) =>  GalleryScreen()));
+                              Navigator.pop(context);
                             },
                                 child: Icon(Icons.arrow_back_ios_new)),
                             SizedBox(width: 20),
@@ -79,7 +80,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                             ),
                             Spacer(),
                             InkWell(onTap: () {
-                              // Navigator.push(context, MaterialPageRoute(builder: (context) => InfirmationScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => InfirmationScreen()));
                             },
                                 child: Icon(Icons.arrow_forward_ios))
                           ],
@@ -94,7 +95,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                             ),
                             Spacer(),
                             InkWell(onTap: () {
-                              // Navigator.push(context, MaterialPageRoute(builder: (context) => HobbiesScreen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => HobbiesScreen()));
                             },
                               child: Icon(Icons.arrow_forward_ios))
                           ],

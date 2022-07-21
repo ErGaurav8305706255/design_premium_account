@@ -60,7 +60,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: ColorConstant.button_color,
+        selectedItemColor: ColorConstant.buttonColor,
         unselectedItemColor: ColorConstant.gray,
         onTap: _onItemTapped,
       ),

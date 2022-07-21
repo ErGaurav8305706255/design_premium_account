@@ -8,14 +8,14 @@ import 'constant/color_constant.dart';
 import 'constant/string_constant.dart';
 import 'hobbies_screen.dart';
 import 'infirmation_screen.dart';
-class MyProfileScreen extends StatefulWidget {
-  const MyProfileScreen({Key? key}) : super(key: key);
+class MainProfileScreen extends StatefulWidget {
+  const MainProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyProfileScreen> createState() => _MyProfileScreenState();
+  State<MainProfileScreen> createState() => _MainProfileScreenState();
 }
 
-class _MyProfileScreenState extends State<MyProfileScreen> {
+class _MainProfileScreenState extends State<MainProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +31,9 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                        StringConstant.log_out,
+                        StringConstant.logOut,
                         style: TextStyle(
-                            color: ColorConstant.black,
+                            color: ColorConstant.textColor,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline
@@ -48,7 +48,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 child: Container(
                   height: 600,
                   decoration: BoxDecoration(
-                    color: ColorConstant.container_color
+                    color: ColorConstant.containerColor
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
@@ -62,9 +62,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                             },
                                 child: Icon(Icons.arrow_back_ios_new)),
                             SizedBox(width: 20),
-                            Text(StringConstant.my_profile,
+                            Text(StringConstant.myProfile,
                                 style: TextStyle(
-                                    fontSize: 16
+                                  fontSize: 16,
+                                  color: ColorConstant.textColor,
                                 )),
                             Spacer(),
                             Icon(Icons.cancel_outlined,size: 30,)
@@ -90,7 +91,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           children: [
                             Text(StringConstant.hobbies,
                                 style: TextStyle(
-                                    fontSize: 16
+                                  fontSize: 16,
+                                  color: ColorConstant.textColor,
                                 )
                             ),
                             Spacer(),
@@ -103,9 +105,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         SizedBox(height: 50),
                         Row(
                           children: [
-                            Text(StringConstant.search_setting,
+                            Text(StringConstant.searchSetting,
                                 style: TextStyle(
-                                    fontSize: 16
+                                  fontSize: 16,
+                                  color: ColorConstant.textColor,
                                 )
                             ),
                             Spacer(),
@@ -119,9 +122,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         SizedBox(height: 50),
                         Row(
                           children: [
-                            Text(StringConstant.privacy_policy,
+                            Text(StringConstant.privacyPolicy,
                                 style: TextStyle(
-                                    fontSize: 16
+                                  fontSize: 16,
+                                  color: ColorConstant.textColor,
                                 )
                             ),
                             Spacer(),

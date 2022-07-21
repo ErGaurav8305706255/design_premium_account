@@ -1,11 +1,12 @@
 import 'package:design_premium_account/constant/color_constant.dart';
+import 'package:design_premium_account/constant/image_constant.dart';
 import 'package:design_premium_account/constant/string_constant.dart';
 import 'package:design_premium_account/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'constant/color_constant.dart';
 import 'constant/string_constant.dart';
-import 'my_profile_screen.dart';
+import 'main_profile_screen.dart';
 class GalleryScreen extends StatefulWidget {
   const GalleryScreen({Key? key}) : super(key: key);
 
@@ -44,12 +45,13 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 Text(
                   StringConstant.gallery,
                   style: TextStyle(
+                    color: ColorConstant.textColor,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),),
                 SizedBox(height: 40),
                 SizedBox(
-                  height: 400,
+                  height: 340,
                   child: GridView.builder(
                       itemCount: items.length,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -59,11 +61,15 @@ class _GalleryScreenState extends State<GalleryScreen> {
                           mainAxisExtent: 160
                       ),
                       itemBuilder: (context , index){
-                        return ClipRRect(
+                        return Container(
+                          alignment: Alignment.bottomRight,
+                          decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(items[index],
-                            fit: BoxFit.cover,
-                          ),
+                          image: DecorationImage(
+                            image: AssetImage(items[index]),fit: BoxFit.cover
+                          )
+                        ),
+                          child: Icon(Icons.add_circle_outlined,size: 25,color: ColorConstant.lightGray),
                         );
                       }
                       ),
@@ -71,12 +77,12 @@ class _GalleryScreenState extends State<GalleryScreen> {
                 Spacer(),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MyProfileScreen()));
+                    Navigator.pop(context);
                   },
                   child: Container(height: 50,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(40),
-                        color: ColorConstant.button_color
+                        color: ColorConstant.buttonColor
                     ),
                     child: Center(
                         child: Text(StringConstant.save,

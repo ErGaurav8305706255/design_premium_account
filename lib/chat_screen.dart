@@ -13,6 +13,7 @@ class _ChatScreenState extends State<ChatScreen> {
       child: Center(
           child: Text('Comming Soon',
             style: TextStyle(
+              fontSize: 25,
                 fontWeight: FontWeight.bold
       ),)),
     );

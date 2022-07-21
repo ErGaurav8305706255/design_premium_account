@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'constant/color_constant.dart';
 import 'constant/string_constant.dart';
+import 'main_profile_screen.dart';
 class InfirmationScreen extends StatefulWidget {
   const InfirmationScreen({Key? key}) : super(key: key);
 
@@ -27,9 +28,11 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                           },
                             child: Icon(Icons.arrow_back_ios_new)),
                         SizedBox(width: 10),
-                        Text(StringConstant.my_profile,
+                        Text(StringConstant.myProfile,
                           style: TextStyle(
-                              color: ColorConstant.black,fontWeight: FontWeight.bold,fontSize: 17
+                              color: ColorConstant.textColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17
                           ),
                         ),
                         Spacer(),
@@ -41,7 +44,8 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                       child: Text(StringConstant.information,
                         style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.bold
+                            fontWeight: FontWeight.bold,
+                          color: ColorConstant.textColor,
                         ),),
                     ),
                     SizedBox(height: 15),
@@ -58,13 +62,13 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                           hintText: StringConstant.name,
                           filled: true,
                           hintStyle: TextStyle(
-                              color: ColorConstant.black
+                            color: ColorConstant.textColor,
                           ),
                           fillColor: ColorConstant.transparent,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: ColorConstant.light_gray,width: 1
+                                  color: ColorConstant.lightGray,width: 1
                               )
                           )
                       ),
@@ -72,7 +76,7 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                     SizedBox(height: 15),
                     Text(StringConstant.dob,
                         style: TextStyle(
-                            color: ColorConstant.black,
+                            color: ColorConstant.textColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold
                         )
@@ -83,13 +87,13 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                           hintText: StringConstant.dob,
                           filled: true,
                           hintStyle: TextStyle(
-                              color: ColorConstant.black
+                            color: ColorConstant.textColor,
                           ),
                           fillColor: ColorConstant.transparent,
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
                               borderSide: BorderSide(
-                                  color: ColorConstant.light_gray,width: 1
+                                  color: ColorConstant.lightGray,width: 1
                               )
                           )
                       ),
@@ -97,7 +101,7 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                     SizedBox(height: 15),
                     Text(StringConstant.gender,
                         style: TextStyle(
-                            color: ColorConstant.black,
+                            color: ColorConstant.textColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold
                         )
@@ -107,15 +111,15 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                       padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: ColorConstant.light_gray,width: 1)
+                        border: Border.all(color: ColorConstant.lightGray,width: 1)
                       ),
                       child: TabBar(
                         indicator: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: ColorConstant.container_color,
+                          color: ColorConstant.containerColor,
                         ),
                           indicatorColor: ColorConstant.transparent,
-                          labelColor: ColorConstant.black,
+                          labelColor: ColorConstant.textColor,
                           labelStyle: TextStyle(
                             fontSize: 15,
                              fontWeight: FontWeight.bold,
@@ -139,18 +143,22 @@ class _InfirmationScreenState extends State<InfirmationScreen> {
                     ),
 
                     SizedBox(height: 150),
-                    Container(
-                      padding: EdgeInsets.all(15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: ColorConstant.button_color
+                    InkWell(onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => MainProfileScreen()));
+                    },
+                      child: Container(
+                        padding: EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: ColorConstant.buttonColor
+                        ),
+                        child: Center(child: Text(StringConstant.save,
+                          style: TextStyle(
+                              color: ColorConstant.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold
+                        ),)),
                       ),
-                      child: Center(child: Text(StringConstant.save,
-                        style: TextStyle(
-                            color: ColorConstant.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold
-                      ),)),
                     )
                   ],
                 ),

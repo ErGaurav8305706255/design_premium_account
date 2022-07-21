@@ -3,6 +3,8 @@ import 'package:design_premium_account/constant/string_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'main_profile_screen.dart';
+
 
 class SearchSettingScreen extends StatefulWidget {
   const SearchSettingScreen({Key? key}) : super(key: key);
@@ -14,6 +16,10 @@ class SearchSettingScreen extends StatefulWidget {
 class _SearchSettingScreenState extends State<SearchSettingScreen> {
   RangeValues values = RangeValues(10,50);
   RangeValues values2 = RangeValues(10,50);
+  RangeValues values3 = RangeValues(10,50);
+  RangeValues values4 = RangeValues(10,50);
+  RangeValues values5 = RangeValues(10,50);
+  RangeValues values6 = RangeValues(10,50);
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(length: 3,
@@ -30,7 +36,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                       },
                           child: Icon(Icons.arrow_back_ios_new)),
                       SizedBox(width: 10),
-                      Text(StringConstant.my_profile,
+                      Text(StringConstant.myProfile,
                       style: TextStyle(
                         color: ColorConstant.black,fontWeight: FontWeight.bold,fontSize: 17
                       ),
@@ -40,7 +46,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                     ],
                   ),
                   SizedBox(height: 50),
-                  Text(StringConstant.search_setting,style: TextStyle(
+                  Text(StringConstant.searchSetting,style: TextStyle(
                     fontSize: 20,fontWeight: FontWeight.bold
                   ),),
                   SizedBox(height: 25),
@@ -48,7 +54,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1,color: ColorConstant.light_gray)
+                      border: Border.all(width: 1,color: ColorConstant.lightGray)
                     ),
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -58,11 +64,11 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                         )),
                         TabBar(
                             indicator: BoxDecoration(
-                              color: ColorConstant.container_color, borderRadius: BorderRadius.circular(10)),
+                              color: ColorConstant.containerColor, borderRadius: BorderRadius.circular(10)),
                             indicatorColor: ColorConstant.transparent,
                             labelColor: ColorConstant.black,
                             labelStyle: const TextStyle(fontSize: 17,fontWeight: FontWeight.bold),
-                            unselectedLabelColor: ColorConstant.light_gray,
+                            unselectedLabelColor: ColorConstant.lightGray,
                             unselectedLabelStyle: const TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                             tabs: [
                               Tab(text: StringConstant.male,),
@@ -86,7 +92,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 1,color: ColorConstant.light_gray)
+                                    border: Border.all(width: 1,color: ColorConstant.lightGray)
                                 ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -132,7 +138,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                         values: values,
                                         min: 0,
                                         max: 50,
-                                        activeColor: ColorConstant.container_color,
+                                        activeColor: ColorConstant.containerColor,
                                         inactiveColor: ColorConstant.gray,
                                         labels: RangeLabels(
                                           values.start.round().toString(),
@@ -149,7 +155,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 1,color: ColorConstant.light_gray)
+                                    border: Border.all(width: 1,color: ColorConstant.lightGray)
                                 ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -218,7 +224,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                         values: values2,
                                         min: 0,
                                         max: 50,
-                                        activeColor: ColorConstant.container_color,
+                                        activeColor: ColorConstant.containerColor,
                                         inactiveColor: ColorConstant.gray,
                                         labels: RangeLabels(
                                             values.start.round().toString(),
@@ -238,7 +244,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 1,color: ColorConstant.light_gray)
+                                    border: Border.all(width: 1,color: ColorConstant.lightGray)
                                 ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -281,17 +287,17 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                     ),
                                     SizedBox(height: 15),
                                     RangeSlider(
-                                        values: values,
+                                        values: values3,
                                         min: 0,
                                         max: 50,
-                                        activeColor: ColorConstant.container_color,
+                                        activeColor: ColorConstant.containerColor,
                                         inactiveColor: ColorConstant.gray,
                                         labels: RangeLabels(
                                             values.start.round().toString(),
                                             values.end.round().toString()
                                         ),
                                         onChanged: (values) => setState(() {
-                                          this.values = values;
+                                          this.values3 = values;
                                         }))
                                   ],
                                 ),
@@ -301,7 +307,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 1,color: ColorConstant.light_gray)
+                                    border: Border.all(width: 1,color: ColorConstant.lightGray)
                                 ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -367,17 +373,17 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                     ),
                                     SizedBox(height: 15),
                                     RangeSlider(
-                                        values: values2,
+                                        values: values4,
                                         min: 0,
                                         max: 50,
-                                        activeColor: ColorConstant.container_color,
+                                        activeColor: ColorConstant.containerColor,
                                         inactiveColor: ColorConstant.gray,
                                         labels: RangeLabels(
                                             values.start.round().toString(),
                                             values.end.round().toString()
                                         ),
                                         onChanged: (values) => setState(() {
-                                          this.values2 = values;
+                                          this.values4 = values;
                                         }))
                                   ],
                                 ),
@@ -390,7 +396,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 1,color: ColorConstant.light_gray)
+                                    border: Border.all(width: 1,color: ColorConstant.lightGray)
                                 ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -433,17 +439,17 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                     ),
                                     SizedBox(height: 15),
                                     RangeSlider(
-                                        values: values,
+                                        values: values5,
                                         min: 0,
                                         max: 50,
-                                        activeColor: ColorConstant.container_color,
+                                        activeColor: ColorConstant.containerColor,
                                         inactiveColor: ColorConstant.gray,
                                         labels: RangeLabels(
                                             values.start.round().toString(),
                                             values.end.round().toString()
                                         ),
                                         onChanged: (values) => setState(() {
-                                          this.values = values;
+                                          this.values5 = values;
                                         }))
                                   ],
                                 ),
@@ -453,7 +459,7 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 1,color: ColorConstant.light_gray)
+                                    border: Border.all(width: 1,color: ColorConstant.lightGray)
                                 ),
                                 child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -519,17 +525,17 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                                     ),
                                     SizedBox(height: 15),
                                     RangeSlider(
-                                        values: values2,
+                                        values: values6,
                                         min: 0,
                                         max: 50,
-                                        activeColor: ColorConstant.container_color,
+                                        activeColor: ColorConstant.containerColor,
                                         inactiveColor: ColorConstant.gray,
                                         labels: RangeLabels(
                                             values.start.round().toString(),
                                             values.end.round().toString()
                                         ),
                                         onChanged: (values) => setState(() {
-                                          this.values2 = values;
+                                          this.values6 = values;
                                         }))
                                   ],
                                 ),
@@ -540,15 +546,23 @@ class _SearchSettingScreenState extends State<SearchSettingScreen> {
                     ),
                   ),
                   SizedBox(height: 50),
-                  Container(
-                    padding: EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                      color: ColorConstant.button_color
+                  InkWell(onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => MainProfileScreen()));
+                  },
+                    child: Container(
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                        color: ColorConstant.buttonColor
+                      ),
+                      child: Center(
+                          child: Text(StringConstant.apply,
+                            style: TextStyle(
+                                color: ColorConstant.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold
+                      ),)),
                     ),
-                    child: Center(child: Text(StringConstant.apply,style: TextStyle(
-                      color: ColorConstant.white,fontSize: 15,fontWeight: FontWeight.bold
-                    ),)),
                   )
                 ],
               ),

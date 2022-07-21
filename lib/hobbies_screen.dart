@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'constant/color_constant.dart';
 import 'constant/string_constant.dart';
+import 'main_profile_screen.dart';
 class HobbiesScreen extends StatefulWidget {
   const HobbiesScreen({Key? key}) : super(key: key);
 
@@ -25,7 +26,7 @@ class _HobbiesScreenState extends State<HobbiesScreen> {
                       },
                         child: Icon(Icons.arrow_back_ios_new)),
                     SizedBox(width: 10),
-                    Text(StringConstant.my_profile,
+                    Text(StringConstant.myProfile,
                       style: TextStyle(
                           color: ColorConstant.black,fontWeight: FontWeight.bold,fontSize: 17
                       ),
@@ -36,13 +37,13 @@ class _HobbiesScreenState extends State<HobbiesScreen> {
                 ),
                 SizedBox(height: 50),
                 Center(
-                  child: Text(StringConstant.my_hobbies,
+                  child: Text(StringConstant.myHobbies,
                     style: TextStyle(
                       fontSize: 20,fontWeight: FontWeight.bold,
                   ),),
                 ),
                 SizedBox(height: 50),
-                Center(child: Text(StringConstant.you_have_1_hobby)),
+                Center(child: Text(StringConstant.youHave1Hobby)),
                 SizedBox(height: 20),
                 Row(
                   children: [
@@ -51,7 +52,7 @@ class _HobbiesScreenState extends State<HobbiesScreen> {
                       width: 150,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: ColorConstant.container_color
+                        color: ColorConstant.containerColor
                       ),
                       child: Center(child: Text(StringConstant.badminton)),
                     ),
@@ -73,7 +74,7 @@ class _HobbiesScreenState extends State<HobbiesScreen> {
                       border: Border.all(color: ColorConstant.navy,width: 2)
                   ),
                   child: Center(
-                      child: Text(StringConstant.add_new_hobbies,
+                      child: Text(StringConstant.addNewHobbies,
                         style: TextStyle(
                             color: ColorConstant.navy,
                             fontSize: 15,
@@ -81,15 +82,23 @@ class _HobbiesScreenState extends State<HobbiesScreen> {
                         ),)),
                 ),
                 SizedBox(height: 15),
-                Container(
-                  padding: EdgeInsets.all(15),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      color: ColorConstant.button_color
+                InkWell(onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainProfileScreen()));
+                },
+                  child: Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: ColorConstant.buttonColor
+                    ),
+                    child: Center(
+                        child: Text(StringConstant.save,
+                          style: TextStyle(
+                              color: ColorConstant.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold
+                          ),)),
                   ),
-                  child: Center(child: Text(StringConstant.save,style: TextStyle(
-                      color: ColorConstant.white,fontSize: 15,fontWeight: FontWeight.bold
-                  ),)),
                 )
               ],
             ),

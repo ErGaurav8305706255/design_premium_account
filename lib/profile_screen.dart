@@ -3,7 +3,9 @@ import 'package:design_premium_account/constant/color_constant.dart';
 import 'package:design_premium_account/constant/string_constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'constant/image_constant.dart';
 import 'gallery_screen.dart';
+import 'main_profile_screen.dart';
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -31,9 +33,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     children: [
                       SizedBox(height: 360),
                       Center(
-                          child: Text(StringConstant.my_hobbies,
+                          child: Text(StringConstant.myHobbies,
                             style: TextStyle(
-                                color: ColorConstant.black,
+                                color: ColorConstant.textColor,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold
                       ),)),
@@ -41,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Container(
                         height: 30,width: 150,
                           decoration: BoxDecoration(
-                              color: ColorConstant.container_color,
+                              color: ColorConstant.containerColor,
                               borderRadius: BorderRadius.circular(10)
                           ),
                           child: Center(child: Text(StringConstant.badminton))),
@@ -50,41 +52,56 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: ColorConstant.light_container_color
+                          color: ColorConstant.lightContainerColor
                         ),
                           child: Text(StringConstant.intermediate)),
                       SizedBox(height: 30),
                       Container(
                           height: 30,width: 150,
                         decoration: BoxDecoration(
-                          color: ColorConstant.container_color,
+                          color: ColorConstant.containerColor,
                           borderRadius: BorderRadius.circular(10)
                         ),
-                          child: Center(child: Text(StringConstant.photography))),
+                          child: Center(child: Text(StringConstant.photography,
+                            style: TextStyle(
+                              color: ColorConstant.textColor,
+                          ),))),
                       SizedBox(height: 15),
                       Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: ColorConstant.light_container_color
+                              color: ColorConstant.lightContainerColor
                           ),
-                          child: Text(StringConstant.intermediate)),
+                          child: Text(StringConstant.intermediate,
+                          style: TextStyle(
+                            color: ColorConstant.textColor,
+                          ),
+                          )),
                       SizedBox(height: 30),
                       Container(
                           height: 30,width: 150,
                           decoration: BoxDecoration(
-                              color: ColorConstant.container_color,
+                              color: ColorConstant.containerColor,
                               borderRadius: BorderRadius.circular(10)
                           ),
-                          child: Center(child: Text(StringConstant.gallery))),
+                          child: Center(child: Text(StringConstant.gallery,
+                          style: TextStyle(
+                            color: ColorConstant.textColor,
+                          ),
+                          ))),
                       SizedBox(height: 15),
                       Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: ColorConstant.light_container_color
+                              color: ColorConstant.lightContainerColor
                           ),
-                          child: Text(StringConstant.intermediate)),
+                          child: Text(StringConstant.intermediate,
+                          style: TextStyle(
+                            color: ColorConstant.textColor,
+                          ),
+                          )),
                     ],
                   ),
                 ),
@@ -96,23 +113,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                     height: 350,
                     decoration: BoxDecoration(
-                      color: ColorConstant.container_color,
+                      color: ColorConstant.containerColor,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
                           children: [
-                            Text(StringConstant.my_profile,style: TextStyle(
+                            Text(StringConstant.myProfile,style: TextStyle(
                               fontSize: 18,
                                 fontWeight: FontWeight.bold
                             )),
                             Spacer(),
-                            Icon(Icons.apps,size: 35,)
+                            InkWell(onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => MainProfileScreen()));
+                            },
+                                child: Icon(Icons.apps,size: 35,))
                           ],
                         ),
                         SizedBox(height: 150),
-                        Text(StringConstant.james_clark,
+                        Text(StringConstant.jamesClark,
                             style: TextStyle(
                           color: ColorConstant.white,
                                 fontSize: 20,
@@ -123,8 +143,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             Icon(Icons.location_on),
                             SizedBox(width: 5),
-                            Text(StringConstant.london,style: TextStyle(
-                              fontSize: 17
+                            Text(StringConstant.london,
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: ColorConstant.textColor,
                             )),
                           ],
                         ),
@@ -133,7 +155,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             width: 110,
                             padding: EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                             decoration: BoxDecoration(
-                                color: ColorConstant.button_color,
+                                color: ColorConstant.buttonColor,
                                 borderRadius: BorderRadius.circular(20)
                             ),
                             child: Row(
@@ -154,7 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 110,
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(80),
-                        child: Image.asset('assets/person.jpg',
+                        child: Image.asset(ImageConstant.person,
                             fit: BoxFit.cover,
                             width: 120,
                             height: 120))
